@@ -32,8 +32,10 @@ public class NewRandom {
     private static int sumCharacters (char[] num) {
         //int numInt = ((int)num);
         int dividend = 0;
+        String stringOfChar;
         for (int i=0; i < num.length; i++) {
-            dividend += ((int)num[i]);
+            stringOfChar = Character.toString(num[i]);
+            dividend += Integer.valueOf(stringOfChar);
         }
         return dividend;
     }
@@ -49,9 +51,9 @@ public class NewRandom {
             }
         }
         char charLargeNum;
-        int sizeLargeNum = largeNum.length - initPos;
-        for (int i=initPos; i <= sizeNumber; i++)  {
-            charLargeNum = i >= (largeNum.length-1) ? 0 : largeNum[i];
+        //int sizeLargeNum = largeNum.length - initPos;
+        for (int i=initPos; i <= (sizeNumber+initPos-1); i++)  {
+            charLargeNum = i > (largeNum.length-1) ? '0' : largeNum[i];
             sumNum += Character.toString(charLargeNum);
         }
         //divider = Double.parseDouble(sumNum);      
